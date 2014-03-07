@@ -32,8 +32,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+gem 'therubyracer'
+gem 'simple_form'
+gem 'pygments.rb'
+gem 'redcarpet'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2', require: 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'

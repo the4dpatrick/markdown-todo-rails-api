@@ -1,4 +1,18 @@
 TodoAppRailsIphoneApi::Application.routes.draw do
+  root to: 'static_pages#home'
+
+  resources :lists do
+    resources :todos
+  end
+
+  get '/signup', to: 'users#new'
+  resources :users
+
+  match '/signin', to: 'sessions#new', via: :get
+  match '/signout', to: 'sessions#destroy', via: :delete
+  resources :sessions, only: :create
+  match '/about', to: 'static_pages#about', via: :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

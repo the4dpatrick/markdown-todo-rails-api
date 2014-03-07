@@ -1,0 +1,24 @@
+<%- model_class = List -%>
+<ul class="breadcrumb">
+    <li>
+      <%= link_to 'My Lists', lists_path() %>
+      <span class="divider">/</span>
+    </li>
+    <li>
+      <%= link_to 'Edit This List', list_todos_path(@list) %>
+      <span class="divider">/</span>
+    </li>
+    <li class="active">
+      <a href="#">Current List</a>
+    </li>
+</ul>
+
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<% if @list.todos %>
+  <h2>Todo items</h2>
+  <%= render @list.todos %>
+<% end %>
+
+<h2>Add todo item</h2>
+<%= render 'todos/form' %>
